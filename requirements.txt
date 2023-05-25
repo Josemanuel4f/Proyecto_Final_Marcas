@@ -8,6 +8,7 @@ importlib-metadata==6.6.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
+pkg_resources==0.0.0
 requests==2.31.0
 urllib3==2.0.2
 Werkzeug==2.3.4
