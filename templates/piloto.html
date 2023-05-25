@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Proyecto MSX - Detalles{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Proyecto Final Marcas</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">Detalles sobre el piloto</h2>
+            <p class="post-meta">
+                By <a href="#" class="post-author">José Manuel</a> under <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+            <p></p>
+        </header>
+        <body>
+            <table>
+                <theader>
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Nacionalidad </th>
+                        <th> Equipo </th>
+                        <th> Posición </th>
+                        <th> Puntos </th>
+                    </tr>
+                </theader>
+                <tbody>
+                    <tr>
+                        <td>{{ piloto.name }}</td>
+                        <td>{{ piloto.nationality }}</td>
+                        <td>{{ piloto.team.name}}</td>
+                        <td>{{ piloto.result.position }}</td>
+                        <td>{{ piloto.result.points }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        <p>Pulsa sobre el logo para volver a la lista de pilotos</p>
+        <a href="/pilotos"><img src="../static/img/logo.png" width="150" height="65"></a>
+        </body>
+    </section>
+    
+{% endblock %}

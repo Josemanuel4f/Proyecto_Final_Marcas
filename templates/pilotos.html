@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Ejemplo 2 - Artículos{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Final</h1>
+
+    <!-- Un solo artículo de blog -->
+    <section class="post">
+        <header class="post-header">
+            
+
+            <h2 class="post-title">Lista de pilotos</h2>
+
+            <p class="post-meta">
+                Por <a href="#" class="post-author">José Manuel</a> bajo <a class="post-category post-category-design" href="#">Python</a> <a class="post-category post-category-pure" href="#">Flask</a>
+            </p>
+            <p></p>
+        </header>
+
+        <body>
+            <form action="/pilotos" method="POST">
+                <label for="busqueda">Buscar piloto:</label>
+                <input type="text" name="busqueda">
+                <button type="submit">Buscar</button>
+              </form>
+              <p></p>
+            <ul>
+                {% for piloto in lista %}
+                    <li><a href="/piloto/{{ piloto['id'] }}">{{ piloto["name"] }}</a></li>
+                    <!-- <li>{{ piloto["id"] }}</li> -->
+                {% endfor %}
+            </ul>
+
+            {% if busqueda %}
+               <h2>Resultados de la búsqueda:</h2>
+               <ul>
+                {% for piloto in lista %}
+                    <li><a href="/piloto/{{ piloto['id'] }}">{{ piloto["name"] }}</a></li>
+                    <!-- <li>{{ piloto["id"] }}</li> -->
+                {% endfor %}
+            </ul>
+            {% endif %}
+          </body>
+    </section>
+</div>
+{% endblock %}
